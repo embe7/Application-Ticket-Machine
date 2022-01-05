@@ -16,6 +16,11 @@ public class Main {
     public static int HargaTiketKreta;
     public static int TotalHargaTiketKreta;
 
+    //BUss
+    public static int JumlahPenumpangBuss;
+    public static int HargaTiketBuss;
+    public static int TotalHargaTiketBuss;
+
     public static void main(String[] args) {
         viewShowJenisTransportasi();
     }
@@ -90,6 +95,33 @@ public class Main {
         }
     }
 
+    //showTransportasiBuss
+    public static void showTransportasiBuss(){
+        if (asal.equals("medan") & tujuan.equals("jakarta")){
+            HargaTiketBuss = 500000;
+            System.out.println("Harga Tiket Rp." + HargaTiketBuss);
+            TotalHargaTiketBuss = HargaTiketBuss * JumlahPenumpangBuss;
+            System.out.println("Total Harga Rp." + TotalHargaTiketBuss);
+        }else if(asal.equals("Jakarta") & tujuan.equals("medan")){
+            HargaTiketBuss = 500000;
+            System.out.println("Harga Tiket Rp." + HargaTiketBuss);
+            TotalHargaTiketBuss = HargaTiketBuss * JumlahPenumpangBuss;
+            System.out.println("Total Harga Rp." + TotalHargaTiketBuss);
+        }else if (asal.equals("medan") & tujuan.equals("aceh")){
+            HargaTiketBuss = 200000;
+            System.out.println("Harga Tiket Rp." + HargaTiketBuss);
+            TotalHargaTiketBuss = HargaTiketBuss * JumlahPenumpangBuss;
+            System.out.println("Total Harga Rp." + TotalHargaTiketBuss);
+        }else if(asal.equals("aceh") & tujuan.equals("medan")){
+            HargaTiketBuss = 200000;
+            System.out.println("Harga Tiket Rp." + HargaTiketBuss);
+            TotalHargaTiketBuss = HargaTiketBuss * JumlahPenumpangBuss;
+            System.out.println("Total Harga Rp." + TotalHargaTiketBuss);
+        }else {
+            System.out.println("Lokasi Belum Tersedia");
+        }
+    }
+
     //viewShowJenisTransportasi
     public static void viewShowJenisTransportasi(){
         Scanner InputUser = new Scanner(System.in);
@@ -125,9 +157,9 @@ public class Main {
         System.out.println("==== Transportasi Kreta ====");
 
         Scanner InputUser = new Scanner(System.in);
-        System.out.print("asal : ");
+        System.out.print("asal           : ");
         asal = InputUser.next();
-        System.out.print("tujuan : ");
+        System.out.print("tujuan         : ");
         tujuan = InputUser.next();
         System.out.print("jumlah pesanan : ");
         JumlahPenumpangKreta = InputUser.nextInt();
@@ -138,5 +170,15 @@ public class Main {
     //view transportasi buss
     public static void viewTransportasiBuss(){
         System.out.println("==== Transportasi Buss ====");
+
+        Scanner InputUser = new Scanner(System.in);
+        System.out.print("asal :");
+        asal = InputUser.next();
+        System.out.print("tujuan : ");
+        tujuan = InputUser.next();
+        System.out.print("pumlah pesanan : ");
+        JumlahPenumpangBuss = InputUser.nextInt();
+
+        showTransportasiBuss();
     }
 }
