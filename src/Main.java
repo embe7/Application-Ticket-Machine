@@ -11,6 +11,11 @@ public class Main {
     public static int HargaTiketPesawat;
     public static int TotalHargaTiketPesawat;
 
+    //Kreta
+    public static int JumlahPenumpangKreta;
+    public static int HargaTiketKreta;
+    public static int TotalHargaTiketKreta;
+
     public static void main(String[] args) {
         viewShowJenisTransportasi();
     }
@@ -61,25 +66,25 @@ public class Main {
     //ShowTransportasiKreta
     public static void showTransportasiKreta(){
         if (asal.equals("medan") & tujuan.equals("jakarta")){
-            HargaTiketPesawat = 2000000;
-            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
-            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
-            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+            HargaTiketKreta = 2000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketKreta);
+            TotalHargaTiketKreta = HargaTiketKreta * JumlahPenumpangKreta;
+            System.out.println("Total Harga Rp." + TotalHargaTiketKreta);
         }else if(asal.equals("Jakarta") & tujuan.equals("medan")){
-            HargaTiketPesawat = 2000000;
-            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
-            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
-            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+            HargaTiketKreta = 2000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketKreta);
+            TotalHargaTiketKreta = HargaTiketKreta * JumlahPenumpangKreta;
+            System.out.println("Total Harga Rp." + TotalHargaTiketKreta);
         }else if (asal.equals("medan") & tujuan.equals("aceh")){
-            HargaTiketPesawat = 1000000;
-            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
-            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
-            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+            HargaTiketKreta = 1000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketKreta);
+            TotalHargaTiketKreta = HargaTiketKreta * JumlahPenumpangKreta;
+            System.out.println("Total Harga Rp." + TotalHargaTiketKreta);
         }else if(asal.equals("aceh") & tujuan.equals("medan")){
-            HargaTiketPesawat = 1000000;
-            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
-            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
-            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+            HargaTiketKreta = 1000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketKreta);
+            TotalHargaTiketKreta = HargaTiketKreta * JumlahPenumpangKreta;
+            System.out.println("Total Harga Rp." + TotalHargaTiketKreta);
         }else {
             System.out.println("Lokasi Belum Tersedia");
         }
@@ -118,6 +123,17 @@ public class Main {
     //view transportasi kreta
     public static void viewTransportasiKreta(){
         System.out.println("==== Transportasi Kreta ====");
+
+        Scanner InputUser = new Scanner(System.in);
+        System.out.print("asal : ");
+        asal = InputUser.next();
+        System.out.print("tujuan : ");
+        tujuan = InputUser.next();
+        System.out.print("jumlah pesanan : ");
+        JumlahPenumpangKreta = InputUser.nextInt();
+
+        showTransportasiKreta();
+
     }
     //view transportasi buss
     public static void viewTransportasiBuss(){
