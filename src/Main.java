@@ -58,6 +58,33 @@ public class Main {
 
     }
 
+    //ShowTransportasiKreta
+    public static void showTransportasiKreta(){
+        if (asal.equals("medan") & tujuan.equals("jakarta")){
+            HargaTiketPesawat = 2000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
+            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
+            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+        }else if(asal.equals("Jakarta") & tujuan.equals("medan")){
+            HargaTiketPesawat = 2000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
+            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
+            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+        }else if (asal.equals("medan") & tujuan.equals("aceh")){
+            HargaTiketPesawat = 1000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
+            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
+            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+        }else if(asal.equals("aceh") & tujuan.equals("medan")){
+            HargaTiketPesawat = 1000000;
+            System.out.println("Harga Tiket Rp." + HargaTiketPesawat);
+            TotalHargaTiketPesawat = HargaTiketPesawat * JumlahPenumpangPesawat;
+            System.out.println("Total Harga Rp." + TotalHargaTiketPesawat);
+        }else {
+            System.out.println("Lokasi Belum Tersedia");
+        }
+    }
+
     //viewShowJenisTransportasi
     public static void viewShowJenisTransportasi(){
         Scanner InputUser = new Scanner(System.in);
