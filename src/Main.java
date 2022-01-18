@@ -22,6 +22,7 @@ public class Main {
     public static int JumlahPenumpangBuss;
     public static int HargaTiketBuss;
     public static int TotalHargaTiketBuss;
+    public static int JumlahPembayaranTiketBuss;
 
     public static void main(String[] args) {
         viewShowJenisTransportasi();
@@ -134,6 +135,17 @@ public class Main {
         return dataTransaksi;
     }
 
+    //showTransaksiBuss
+    static int showTransaksiBuss(int total, int JumlahBayar){
+        total = TotalHargaTiketBuss;
+        JumlahBayar = JumlahPembayaranTiketBuss;
+        int dataTransaksi = JumlahBayar -  total;
+        System.out.print("Kembalian = Rp." + dataTransaksi);
+
+        return dataTransaksi;
+    }
+
+
     //viewShowJenisTransportasi
     public static void viewShowJenisTransportasi(){
         Scanner InputUser = new Scanner(System.in);
@@ -190,10 +202,11 @@ public class Main {
         asal = InputUser.next();
         System.out.print("tujuan : ");
         tujuan = InputUser.next();
-        System.out.print("pumlah pesanan : ");
+        System.out.print("jumlah penumpang : ");
         JumlahPenumpangBuss = InputUser.nextInt();
 
         showTransportasiBuss();
+        viewShowTransaksiBuss();
     }
 
     //viewShowTransaksiPesawat
@@ -209,5 +222,20 @@ public class Main {
         JumlahPembayaranTiketPesawat = InputJumlahBayar.nextInt();
 
         showTransaksiPesawat(TotalHargaTiketPesawat,JumlahPembayaranTiketPesawat);
+    }
+
+    //viewShowTransaksiBuss
+    public static void viewShowTransaksiBuss(){
+        Scanner InputJumlahBayar = new Scanner(System.in);
+
+        System.out.println("==== Menu Transaksi Pesawat ====");
+        System.out.println("Asal : " + asal);
+        System.out.println("Tujuan : " + tujuan);
+        System.out.println("Jumlah Penumpang : " + JumlahPenumpangBuss);
+        System.out.println("Total Harga = Rp." + TotalHargaTiketBuss);
+        System.out.print("Jumlah Pembayaran = Rp.");
+        JumlahPembayaranTiketBuss = InputJumlahBayar.nextInt();
+
+        showTransaksiBuss(TotalHargaTiketBuss,JumlahPembayaranTiketBuss);
     }
 }
