@@ -17,6 +17,7 @@ public class Main {
     public static int JumlahPenumpangKreta;
     public static int HargaTiketKreta;
     public static int TotalHargaTiketKreta;
+    public static int JumlahPembayaranTiketKreta;
 
     //BUss
     public static int JumlahPenumpangBuss;
@@ -145,6 +146,16 @@ public class Main {
         return dataTransaksi;
     }
 
+    //showTransaksiKreta
+    static int showTransaksiKreta(int total, int JumlahBayar){
+        total = TotalHargaTiketKreta;
+        JumlahBayar = JumlahPembayaranTiketKreta;
+        int dataTransaksi = JumlahBayar -  total;
+        System.out.print("Kembalian = Rp." + dataTransaksi);
+
+        return dataTransaksi;
+    }
+
 
     //viewShowJenisTransportasi
     public static void viewShowJenisTransportasi(){
@@ -191,6 +202,7 @@ public class Main {
         JumlahPenumpangKreta = InputUser.nextInt();
 
         showTransportasiKreta();
+        viewShowTransaksiKreta();
 
     }
     //view transportasi buss
@@ -237,5 +249,19 @@ public class Main {
         JumlahPembayaranTiketBuss = InputJumlahBayar.nextInt();
 
         showTransaksiBuss(TotalHargaTiketBuss,JumlahPembayaranTiketBuss);
+    }
+    //viewShowTransaksiKreta
+    public static void viewShowTransaksiKreta(){
+        Scanner InputJumlahBayar = new Scanner(System.in);
+
+        System.out.println("==== Menu Transaksi Pesawat ====");
+        System.out.println("Asal : " + asal);
+        System.out.println("Tujuan : " + tujuan);
+        System.out.println("Jumlah Penumpang : " + JumlahPenumpangKreta);
+        System.out.println("Total Harga = Rp." + TotalHargaTiketKreta);
+        System.out.print("Jumlah Pembayaran = Rp.");
+        JumlahPembayaranTiketKreta = InputJumlahBayar.nextInt();
+
+        showTransaksiKreta(TotalHargaTiketKreta,JumlahPembayaranTiketKreta);
     }
 }
